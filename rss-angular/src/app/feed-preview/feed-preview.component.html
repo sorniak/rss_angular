@@ -1,0 +1,41 @@
+<div class="lds-hourglass" *ngIf="loading || (feeds===undefined)"></div>
+<div  *ngIf="!loading && feeds!==undefined">
+<div class="centerPanel">
+    <input 
+        class="searchInput"
+        type="text"
+        [(ngModel)]="searchParams"
+        placeholder="Title must contain...?"
+    >
+</div>
+<ul class="tilesWrap">
+    <ng-container *ngFor="let item of feeds">
+    <li *ngIf="item.childNodes[0].childNodes[0].nodeValue.search(searchParams)!==-1">
+            <h3 id="title">{{item.childNodes[0].childNodes[0].nodeValue}}</h3>
+            <div id="image"><img [src]="item.childNodes[5].attributes[0].nodeValue"></div>
+            <div id="description" [innerHTML]="item.childNodes[2].childNodes[0].textContent.replace('Continue Reading at GameSpot','')"></div>
+            <a id="link" [href]="item.childNodes[1].childNodes[0].nodeValue">Find out more...</a>
+            <h2 id="date">{{item.childNodes[4].childNodes[0].nodeValue | date:"shortDate"}}</h2>
+    </li>
+    </ng-container>
+</ul>
+</div>
+
+<div *ngIf="(!loading) && (feeds===undefined)" class="optionsWrapper">
+
+        <div class="fancyButton">
+            <span (click)="sendRequest()" class="buttonLabel">Send request</span>
+        </div>
+        <div style="text-align: center;">
+            <input 
+                class="checkCORS"
+                type="checkbox"
+                id="checker"
+                (change)="enableCorsProxy()">
+            <label for="checker" class="labelChecker">
+                Try CORS proxy
+            </label>
+        </div>
+        <div class="infoText">RSS feed was NOT fetched. Please, try to send request again. <br /><br />You may tick "CORS proxy" to try server with CORS headers to the proxied request.</div>
+        
+</div>
