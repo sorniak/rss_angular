@@ -1,7 +1,7 @@
 # RssAngular
 
 Rss - simple rss reader
-Change attrite for component feed-preview ( <feed-preview rssUrl=[rss_feed_link]></feed-preview> ), in order to connect to rss feed. Currently "https://www.gamespot.com/feeds/mashup/" is set.
+Change component's attribute rssUrl ( <feed-preview rssUrl=[rss_feed_link]></feed-preview> ), in order to connect to rss feed. Currently "https://www.gamespot.com/feeds/mashup/" is set.
 
 ## Live demo
 https://sorniak.github.io/
