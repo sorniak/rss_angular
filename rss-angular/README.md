@@ -3,6 +3,9 @@
 Rss - simple rss reader
 Change attrite for component feed-preview ( <feed-preview rssUrl=[rss_feed_link]></feed-preview> ), in order to connect to rss feed. Currently "https://www.gamespot.com/feeds/mashup/" is set.
 
+## Live demo
+https://sorniak.github.io/
+
 ## TODO list
 
 1. add unit tests
@@ -11,7 +14,8 @@ Change attrite for component feed-preview ( <feed-preview rssUrl=[rss_feed_link]
 4. better error handling for http calls
 5. cross-browser check (diffrent view on safari\chrome)
 6. make better HTML sanitizing
-6. ...
+7. update .gitignore, clear repository, no need in node_modules
+8. ...
 
 ## Development server
 
