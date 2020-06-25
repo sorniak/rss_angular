@@ -10,3 +10,15 @@ a {
 a:visited {
     color: red;
 }
+
+img {
+    max-width: 480px;
+}
+
+figure {
+    margin: 0;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}

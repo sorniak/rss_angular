@@ -10,7 +10,7 @@
 </div>
 <ul class="tilesWrap">
     <ng-container *ngFor="let item of feeds">
-    <li *ngIf="item.childNodes[0].childNodes[0].nodeValue.search(searchParams)!==-1">
+    <li *ngIf="item.childNodes[0].childNodes[0].nodeValue.toLowerCase().search(searchParams.toLowerCase())!==-1">
             <h3 id="title">{{item.childNodes[0].childNodes[0].nodeValue}}</h3>
             <div id="image"><img [src]="item.childNodes[5].attributes[0].nodeValue"></div>
             <div id="description" [innerHTML]="item.childNodes[2].childNodes[0].textContent.replace('Continue Reading at GameSpot','')"></div>
